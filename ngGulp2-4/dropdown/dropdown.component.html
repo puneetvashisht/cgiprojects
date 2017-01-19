@@ -1,0 +1,10 @@
+<div class="dropdown">
+  <button (click)="toggleMenu()" class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    {{text}}
+    <span class="caret"></span>
+  </button>
+  <ul *ngIf="show" class="dropdown-menushow" aria-labelledby="dropdownMenu1">
+    <dd-item *ngFor="let course of courses" [itemtext]="course" (selectItem)="handleSelectItem($event)"></dd-item>
+    
+  </ul>
+</div>

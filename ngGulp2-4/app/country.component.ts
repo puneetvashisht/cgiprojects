@@ -12,14 +12,18 @@ import { Component } from '@angular/core';
       <p>From child component: {{city}}</p>
     
       <hr>    
-      <cgi-city [country]="c.value" (cityChange)="handleCityChange($event)"></cgi-city>    
+      <cgi-city [country]="c.value || ''" (cityChange)="handleCityChange($event)"></cgi-city>    
   `
 })
 export class CountryComponent  { 
-   countries = ['India', 'US'];
-   city = '';    
+   countries:Array<string> = ['India', 'US'];
+   city:string = '';
 
-   handleCityChange(data){
+ngOnInit() { 
+
+    }
+
+   handleCityChange(data:string){
        console.log('cityChange event in country component')
        console.log(data);
        this.city = data;
