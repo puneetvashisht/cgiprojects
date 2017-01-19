@@ -6,3 +6,12 @@ var Person = (function () {
 }());
 var p = new Person("ravi");
 console.log(p.name);
+
+class Person{
+    
+    constructor(public name:string){  
+    }
+}
+
+let p: Person = new Person("ravi");
+console.log(p.name);
